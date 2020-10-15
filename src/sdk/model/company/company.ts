@@ -66,10 +66,10 @@ import { O365OrganizationJson } from '../o365/__json__/o365-organization-json';
 import { O365BillJson } from './__json__/o365-bill-json';
 import { O365Bill } from './o365-bill';
 import { O365OrgCreateRequest } from './o365-org-create-request';
-import { BackupGroup } from '../backup-group/backup-group';
-import { BackupGroupJson } from '../backup-group/__json__/backup-group-json';
-import { CompanyLocationBackupStatus } from '../backup-group/backup-status/company-location-backup-status';
-import { CompanyLocationBackupStatusJson } from '../backup-group/backup-status/__json__/company-location-backup-status-json';
+import { BackupGroup } from '../advanced-backups/backup-group/backup-group';
+import { BackupGroupJson } from '../advanced-backups/backup-group/__json__/backup-group-json';
+import { CompanyLocationBackupStatus } from '../advanced-backups/backup-status/company-location-backup-status';
+import { CompanyLocationBackupStatusJson } from '../advanced-backups/backup-status/__json__/company-location-backup-status-json';
 
 /**
  * Company.

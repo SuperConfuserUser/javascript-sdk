@@ -114,17 +114,17 @@ import { VdiOrgDeploymentSummary } from '../vdi/vdi-org-deployment-summary';
 import { VdiOrgDeploymentSummaryJson } from '../vdi/__json__/vdi-org-deployment-summary-json';
 import { VdiAutomationGroupDeploymentSummary } from '../vdi/vdi-automation-group-deployment-summary';
 import { VdiAutomationGroupDeploymentSummaryJson } from '../vdi/__json__/vdi-automation-group-deployment-summary-json';
-import { BackupGroup } from '../backup-group/backup-group';
-import { BackupGroupJson } from '../backup-group/__json__/backup-group-json';
-import { BackupPolicy } from '../backup-group/backup-policy/backup-policy';
-import { BackupPolicyJson } from '../backup-group/backup-policy/__json__/backup-policy-json';
-import { BackupPolicyUpdateRequest } from '../backup-group/backup-policy/backup-policy-update-request';
-import { BackupGroupSummaryStats } from '../backup-group/backup-run/backup-group-summary-stats';
-import { BackupGroupSummaryStatsJson } from '../backup-group/backup-run/__json__/backup-group-summary-stats-json';
-import { OrgBackupSummaryStats } from '../backup-group/backup-run/org-backup-summary-stats';
-import { OrgBackupSummaryStatsJson } from '../backup-group/backup-run/__json__/org-backup-summary-stats-json';
-import { OrgBackupStatus } from '../backup-group/backup-status/org-backup-status';
-import { OrgBackupStatusJson } from '../backup-group/backup-status/__json__/org-backup-status-json';
+import { BackupGroup } from '../advanced-backups/backup-group/backup-group';
+import { BackupGroupJson } from '../advanced-backups/backup-group/__json__/backup-group-json';
+import { BackupPolicy } from '../advanced-backups/backup-policy/backup-policy';
+import { BackupPolicyJson } from '../advanced-backups/backup-policy/__json__/backup-policy-json';
+import { BackupPolicyUpdateRequest } from '../advanced-backups/backup-policy/backup-policy-update-request';
+import { BackupGroupSummaryStats } from '../advanced-backups/backup-run/backup-group-summary-stats';
+import { BackupGroupSummaryStatsJson } from '../advanced-backups/backup-run/__json__/backup-group-summary-stats-json';
+import { OrgBackupSummaryStats } from '../advanced-backups/backup-run/org-backup-summary-stats';
+import { OrgBackupSummaryStatsJson } from '../advanced-backups/backup-run/__json__/org-backup-summary-stats-json';
+import { OrgBackupStatus } from '../advanced-backups/backup-status/org-backup-status';
+import { OrgBackupStatusJson } from '../advanced-backups/backup-status/__json__/org-backup-status-json';
 
 /**
  * IaaS Organization.

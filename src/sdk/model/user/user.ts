@@ -60,8 +60,8 @@ import { O365Job } from '../o365/o365-job';
 import { O365JobJson } from '../o365/__json__/o365-job-json';
 import { O365RestoreSession } from '../o365/o365-restore-session';
 import { O365RestoreSessionJson } from '../o365/__json__/o365-restore-session-json';
-import { BackupGroup } from '../backup-group/backup-group';
-import { BackupGroupJson } from '../backup-group/__json__/backup-group-json';
+import { BackupGroup } from '../advanced-backups/backup-group/backup-group';
+import { BackupGroupJson } from '../advanced-backups/backup-group/__json__/backup-group-json';
 
 /**
  * User.

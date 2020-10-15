@@ -44,8 +44,8 @@ import { BillJson } from '../common/billing/__json__/bill-json';
 import { VdcAllocationModel } from '../vdc/__json__/vdc-allocation-model-type';
 import { StorageProfile } from '../common/storage-profile';
 import { StorageProfileJson } from '../common/__json__/storage-profile-json';
-import { VappBackupStatus } from '../backup-group/backup-status/vapp-backup-status';
-import { VappBackupStatusJson } from '../backup-group/backup-status/__json__/vapp-backup-status-json';
+import { VappBackupStatus } from '../advanced-backups/backup-status/vapp-backup-status';
+import { VappBackupStatusJson } from '../advanced-backups/backup-status/__json__/vapp-backup-status-json';
 
 /**
  * Virtual Application.
