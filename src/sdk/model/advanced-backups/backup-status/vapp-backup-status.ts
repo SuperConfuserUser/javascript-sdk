@@ -7,7 +7,7 @@ import { VappBackupStatusJson } from './__json__/vapp-backup-status-json';
  */
 export class VappBackupStatus {
 
-  constructor(private _json: VappBackupStatusJson) {
+  constructor(private _backupStatusJson: VappBackupStatusJson) {
   }
 
   /**
@@ -15,7 +15,7 @@ export class VappBackupStatus {
    * @returns {string}
    */
   get uuid(): string {
-    return this._json.uuid;
+    return this._backupStatusJson.uuid;
   }
 
   /**
@@ -23,7 +23,7 @@ export class VappBackupStatus {
    * @returns {Array<BackupGroupStatusDescriptor>}
    */
   get backupGroups(): Array<BackupGroupStatusDescriptor> {
-    return this._json.backup_groups.map(it => new BackupGroupStatusDescriptor(it));
+    return this._backupStatusJson.backup_groups.map(it => new BackupGroupStatusDescriptor(it));
   }
 
   /**
@@ -31,7 +31,7 @@ export class VappBackupStatus {
    * @returns {Array<VmBackupStatus>}
    */
   get childVmStatuses(): Array<VmBackupStatus> {
-    return this._json.child_vm_statuses.map(it => new VmBackupStatus(it));
+    return this._backupStatusJson.child_vm_statuses.map(it => new VmBackupStatus(it));
   }
 
   /**
@@ -39,7 +39,7 @@ export class VappBackupStatus {
    * @returns {VappBackupStatusJson}
    */
   get json(): VappBackupStatusJson {
-    return Object.assign({}, this._json);
+    return Object.assign({}, this._backupStatusJson);
   }
 
   /**
@@ -47,6 +47,6 @@ export class VappBackupStatus {
    * @returns {string}
    */
   toString(): string {
-    return JSON.stringify(this._json, undefined, 2);
+    return JSON.stringify(this._backupStatusJson, undefined, 2);
   }
 }

@@ -6,7 +6,7 @@ import { BackupGroupStatusDescriptor } from './backup-group-status-descriptor';
  */
 export class VmBackupStatus {
 
-  constructor(private _json: VmBackupStatusJson) {
+  constructor(private _backupStatusJson: VmBackupStatusJson) {
   }
 
   /**
@@ -14,7 +14,7 @@ export class VmBackupStatus {
    * @returns {string}
    */
   get uuid(): string {
-    return this._json.uuid;
+    return this._backupStatusJson.uuid;
   }
 
   /**
@@ -22,7 +22,7 @@ export class VmBackupStatus {
    * @returns {Array<BackupGroupStatusDescriptor>}
    */
   get backupGroups(): Array<BackupGroupStatusDescriptor> {
-    return this._json.backup_groups.map(it => new BackupGroupStatusDescriptor(it));
+    return this._backupStatusJson.backup_groups.map(it => new BackupGroupStatusDescriptor(it));
   }
 
   /**
@@ -30,7 +30,7 @@ export class VmBackupStatus {
    * @returns {VmBackupStatusJson}
    */
   get json(): VmBackupStatusJson {
-    return Object.assign({}, this._json);
+    return Object.assign({}, this._backupStatusJson);
   }
 
   /**
@@ -38,6 +38,6 @@ export class VmBackupStatus {
    * @returns {string}
    */
   toString(): string {
-    return JSON.stringify(this._json, undefined, 2);
+    return JSON.stringify(this._backupStatusJson, undefined, 2);
   }
 }
