@@ -2219,7 +2219,6 @@ export class Org extends Entity {
     });
   }
 
-  // todo: new. test
   /**
    * Gets backup group summary stats for the Org.
    *

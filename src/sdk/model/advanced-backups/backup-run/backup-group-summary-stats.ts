@@ -1,4 +1,5 @@
 import { BackupGroupSummaryStatsJson } from './__json__/backup-group-summary-stats-json';
+import { BackupSummaryStats } from './backup-summary-stats';
 
 /**
  * Backup Group Summary Stats.
@@ -18,10 +19,10 @@ export class BackupGroupSummaryStats {
 
   /**
    * Get stats.
-   * @returns {BackupGroupSummaryStats}
+   * @returns {BackupSummaryStats}
    */
-  get stats(): BackupGroupSummaryStats {
-    return new BackupGroupSummaryStats(this._json.stats);
+  get stats(): BackupSummaryStats {
+    return new BackupSummaryStats(this._json.stats);
   }
 
   /**
