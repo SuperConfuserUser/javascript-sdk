@@ -97,6 +97,13 @@ import { VmBackupSnapshot } from '../advanced-backups/recovery/vm-backup-snapsho
 import { SearchVdcRecoverableFilesAndFoldersFilters } from '../advanced-backups/recovery/search-vdc-recoverable-files-and-folders-filters';
 import { RecoverableFileSearchResult } from '../advanced-backups/recovery/recoverable-file-search-result';
 import { RecoverableFilesSearchResultListJson } from '../advanced-backups/recovery/__json__/recoverable-files-search-result-list-json';
+import { BackupGroupSummaryStats } from '../advanced-backups/backup-run/backup-group-summary-stats';
+import { BackupGroupSummaryStatsJson } from '../advanced-backups/backup-run/__json__/backup-group-summary-stats-json';
+import { BackupRestoreTask } from '../advanced-backups/backup-task/backup-restore-task';
+import { BackupRestoreTaskJson } from '../advanced-backups/backup-task/__JSON__/backup-restore-task-json';
+import { BackupRestoreTaskListJson } from '../advanced-backups/backup-task/__JSON__/backup-restore-task-list-json';
+import { BackupRestoreTaskDetail } from '../advanced-backups/backup-task/backup-restore-task-detail';
+import { BackupRestoreTaskDetailJson } from '../advanced-backups/backup-task/__JSON__/backup-restore-task-detail-json';
 
 /**
  * Virtual Data Center.
@@ -1167,11 +1174,21 @@ export class Vdc extends Entity implements EntityWithPerfSamples {
 
   /**
    * Gets backup group summary stats for the vDC.
+   * Stat time-range defaults to the past 24 hours.
+   * Both startTimeMillis and endTimeMillis params are required if one is used.
    *
+   * @param {number} startTimeMillis Default is 24 hours ago. (Optional)
+   * @param {number} endTimeMillis Default is now. (Optional)
    * @returns {Promise<VdcBackupSummaryStats>}
    */
-  async getBackupGroupSummaryStats(): Promise<VdcBackupSummaryStats> {
-    return Iland.getHttp().get(`/vdcs/${this.uuid}/backup-group-summary-stats`).then((response) => {
+  async getBackupGroupSummaryStats(startTimeMillis?: number,
+                                   endTimeMillis?: number): Promise<VdcBackupSummaryStats> {
+    return Iland.getHttp().get(`/vdcs/${this.uuid}/backup-group-summary-stats`, {
+      params: {
+        startTimeMillis: startTimeMillis ?? null,
+        endTimeMillis: endTimeMillis ?? null
+      }
+    }).then((response) => {
       const json = response.data as VdcBackupSummaryStatsJson;
       return new VdcBackupSummaryStats(json);
     });
@@ -1331,7 +1348,7 @@ export class Vdc extends Entity implements EntityWithPerfSamples {
   /**
    * Restores one or more VM backups within the vDC.
    *
-   * @param {RestoreVMBackupsInVdcParams} params restoration parameters
+   * @param {RestoreVmBackupsInVdcParams} params restoration parameters
    * @return {Promise<Task>} the restore task, used to track the asynchronous operation
    */
   async restoreVMBackupsInVdc(params: RestoreVmBackupsInVdcParams): Promise<Task> {
@@ -1355,6 +1372,44 @@ export class Vdc extends Entity implements EntityWithPerfSamples {
     }).then((response) => {
       const json = (response.data as RecoverableFilesSearchResultListJson).data;
       return json.map(it => new RecoverableFileSearchResult(it));
+    });
+  }
+
+  /**
+   * Lists detailed task information for advanced backup restore tasks in a
+   * specified vDC.
+   * This will always return any currently running tasks in addition to
+   * those that meet any optional filters.
+   * Both startTimeMillis and endTimeMillis params are required if one is used.
+   *
+   * @param {number} startTimeMillis (Optional)
+   * @param {number} endTimeMillis (Optional)
+   * @return {Promise<Array<BackupRestoreTask>>} listing of advanced backup restore task details
+   */
+  async listBackupRestoreTasks(startTimeMillis?: number,
+                               endTimeMillis?: number): Promise<Array<BackupRestoreTask>> {
+    return Iland.getHttp().get(`/vdcs/${this.uuid}/backup-restore-tasks`, {
+      params: {
+        startTimeMillis: startTimeMillis ?? null,
+        endTimeMillis: endTimeMillis ?? null
+      }
+    }).then((response) => {
+      const json = response.data as BackupRestoreTaskListJson;
+      return json.data.map(task => new BackupRestoreTask(task));
+    });
+  }
+
+  /**
+   * Gets detailed recovery task information for a specific advanced backup
+   * restore task.
+   *
+   * @param {string} taskUid the restore task details to retrieve
+   * @return {Promise<BackupRestoreTaskDetail>} advanced backup restore task details
+   */
+  async getBackupRestoreTask(taskUid: string): Promise<BackupRestoreTaskDetail> {
+    return Iland.getHttp().get(`/vdcs/${this.uuid}/backup-restore-tasks/${taskUid}`).then((response) => {
+      const json = response.data as BackupRestoreTaskDetailJson;
+      return new BackupRestoreTaskDetail(json);
     });
   }
 }

@@ -34,7 +34,7 @@ export class ProtectionSource {
   }
 
   /**
-   * Gets native UID of the source in the backing service.
+   * The UID of the associated entity in the backend backup system.
    * @returns {string} native uid
    */
   get nativeUid(): string {

@@ -2221,11 +2221,22 @@ export class Org extends Entity {
 
   /**
    * Gets backup group summary stats for the Org.
+   * Stat time-range defaults to the past 24 hours.
+   * Both startTimeMillis and endTimeMillis params are required if one is used.
+   *
+   * @param {number} startTimeMillis Default is 24 hours ago. (Optional)
+   * @param {number} endTimeMillis Default is now. (Optional)
    *
    * @return {Promise<OrgGroupSummaryStats>}
    */
-  async getBackupGroupSummaryStats(): Promise<OrgBackupSummaryStats> {
-    return Iland.getHttp().get(`/orgs/${this.uuid}/backup-group-summary-stats`).then((response) => {
+  async getBackupGroupSummaryStats(startTimeMillis?: number,
+                                   endTimeMillis?: number): Promise<OrgBackupSummaryStats> {
+    return Iland.getHttp().get(`/orgs/${this.uuid}/backup-group-summary-stats`, {
+      params: {
+        startTimeMillis: startTimeMillis ?? null,
+        endTimeMillis: endTimeMillis ?? null
+      }
+    }).then((response) => {
       const json = response.data as OrgBackupSummaryStatsJson;
       return new OrgBackupSummaryStats(json);
     });
