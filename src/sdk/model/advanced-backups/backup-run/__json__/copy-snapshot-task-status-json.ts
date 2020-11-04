@@ -6,10 +6,10 @@ import { StatusCopySnapshotTaskStatus } from './status-copy-snapshot-task-status
  * Copy Snapshot Task Status JSON.
  */
 export interface CopySnapshotTaskStatusJson {
-  error: string;
+  error?: string;
   source: ProtectionSourceJson;
   stats: CopyRunStatsJson;
   status: StatusCopySnapshotTaskStatus;
-  task_end_time: number;
+  task_end_time?: number;
   task_start_time: number;
 }

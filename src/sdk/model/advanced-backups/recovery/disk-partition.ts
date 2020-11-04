@@ -10,6 +10,7 @@ export class DiskPartition {
 
   /**
    * Get number.
+   * Specifies a unique number of the partition within the linear disk file.
    * @returns {number}
    */
   get number(): number {
@@ -18,6 +19,10 @@ export class DiskPartition {
 
   /**
    * Get type uuid.
+   * Specifies the partition type uuid.
+   * If disk is unpartitioned, this field isnot set.
+   * If disk is MBR partitioned, this field is set to a partition type.
+   * If disk is GPT partitioned, this field is set to a partition type GUID.
    * @returns {string}
    */
   get typeUuid(): string {
@@ -26,6 +31,8 @@ export class DiskPartition {
 
   /**
    * Get offset bytes.
+   * Specifies the offset of the block (in bytes) from the beginning of the
+   * containing object such as a physical disk or a virtual disk file.
    * @returns {number}
    */
   get offsetBytes(): number {
@@ -34,6 +41,7 @@ export class DiskPartition {
 
   /**
    * Get length bytes.
+   * Specifies the length of the block in bytes.
    * @returns {number}
    */
   get lengthBytes(): number {
@@ -42,6 +50,10 @@ export class DiskPartition {
 
   /**
    * Get uuid.
+   * Specifies the partition uuid.
+   * If disk is unpartitioned, this field is not set.
+   * If disk is MBR partitioned, this field is not set.
+   * If disk is GPT partitioned, this field is set to a partition GUID.
    * @returns {string | null}
    */
   get uuid(): string | null {

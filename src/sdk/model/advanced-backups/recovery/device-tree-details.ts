@@ -20,6 +20,10 @@ export class DeviceTreeDetails {
 
   /**
    * Get combine method.
+   * Specifies how to combine the children of this node. The combining strategy
+   * for child devices. Some of these strategies imply constraint on the number
+   * of child devices. e.g. RAID5 will have 5 children. 'LINEAR' indicates
+   * children are juxtaposed to form this device.
    * @returns {CombineMethod}
    */
   get combineMethod(): CombineMethod {

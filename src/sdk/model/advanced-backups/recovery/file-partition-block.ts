@@ -10,6 +10,7 @@ export class FilePartitionBlock {
 
   /**
    * Get number.
+   * Specifies a unique number of the partition within the linear disk file.
    * @returns {number}
    */
   get number(): number {
@@ -18,6 +19,7 @@ export class FilePartitionBlock {
 
   /**
    * Get disk file name.
+   * Specifies the disk file name where the logical partition is.
    * @returns {string}
    */
   get diskFileName(): string {
@@ -26,6 +28,8 @@ export class FilePartitionBlock {
 
   /**
    * Get offset bytes.
+   * Specifies the offset of the block (in bytes) from the beginning of the
+   * containing object such as a physical disk or a virtual disk file.
    * @returns {number}
    */
   get offsetBytes(): number {
@@ -34,6 +38,7 @@ export class FilePartitionBlock {
 
   /**
    * Get length bytes.
+   * Specifies the length of the block in bytes.
    * @returns {number}
    */
   get lengthBytes(): number {

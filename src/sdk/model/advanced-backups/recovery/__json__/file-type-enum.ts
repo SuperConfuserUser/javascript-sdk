@@ -2,8 +2,7 @@
  * File Type Enum.
  */
 export enum FileType {
-  DIRECTORY = 'DIRECTORY',
-  EMAIL = 'EMAIL',
+  ANY = 'ANY',
   FILE = 'FILE',
-  SYMLINK = 'SYMLINK'
+  FOLDER = 'FOLDER'
 }

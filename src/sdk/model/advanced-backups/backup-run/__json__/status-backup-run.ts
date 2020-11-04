@@ -7,5 +7,6 @@ export enum StatusBackupRun {
   CANCELING = 'CANCELING',
   CANCELED = 'CANCELED',
   SUCCESS = 'SUCCESS',
-  FAILURE = 'FAILURE'
+  FAILURE = 'FAILURE',
+  UNKNOWN = 'UNKNOWN'
 }

@@ -1362,13 +1362,13 @@ export class Vdc extends Entity implements EntityWithPerfSamples {
   /**
    * Searches for recoverable backup files and folders within the vDC.
    *
-   * @param {SearchVdcRecoverableFilesAndFoldersFilters} filters optional query filters
+   * @param {SearchVdcRecoverableFilesAndFoldersFilters} filters query filters (Optional)
    * @return {Promise<Array<RecoverableFileSearchResult>>} a list of recoverable files and folders
    */
-  async searchRecoverableFilesAndFolders(filters: SearchVdcRecoverableFilesAndFoldersFilters)
+  async searchRecoverableFilesAndFolders(filters?: SearchVdcRecoverableFilesAndFoldersFilters)
     : Promise<Array<RecoverableFileSearchResult>> {
     return Iland.getHttp().get(`/vdcs/${this.uuid}/recoverable-vms`, {
-      params: filters.json
+      params: filters?.json || null
     }).then((response) => {
       const json = (response.data as RecoverableFilesSearchResultListJson).data;
       return json.map(it => new RecoverableFileSearchResult(it));

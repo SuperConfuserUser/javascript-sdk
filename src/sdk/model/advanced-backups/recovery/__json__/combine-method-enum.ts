@@ -2,7 +2,7 @@
  * Combine method enum.
  */
 export enum CombineMethod {
-  LINEAR = 'LINERA',
+  LINEAR = 'LINEAR',
   STRIPE = 'STRIPE',
   MIRROR = 'MIRROR',
   RAID5 = 'RAID5',

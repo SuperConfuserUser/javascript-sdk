@@ -14,6 +14,7 @@ export class Disk {
 
   /**
    * Get vmdk size bytes.
+   * Specifies the disk size in bytes.
    * @returns {number}
    */
   get vmdkSizeBytes(): number {
@@ -22,6 +23,7 @@ export class Disk {
 
   /**
    * Get vmdk file name.
+   * Specifies the disk file name. This is the VMDK name and not the flat filename.
    * @returns {string}
    */
   get vmdkFileName(): string {
@@ -30,6 +32,7 @@ export class Disk {
 
   /**
    * Get disk format.
+   * Specifies the format of the virtual disk.
    * @returns {DiskFormat}
    */
   get diskFormat(): DiskFormat {
@@ -38,6 +41,8 @@ export class Disk {
 
   /**
    * Get disk blocks.
+   * Array of Disk Blocks.
+   * Specifies a set of disk blocks by defining the location and offset of disk blocks in a disk.
    * @returns {Array<DiskBlock>}
    */
   get diskBlocks(): Array<DiskBlock> {
@@ -46,6 +51,8 @@ export class Disk {
 
   /**
    * Get sector size bytes.
+   * Specifies the sector size of hard disk. It is used for mapping the disk
+   * blocks of the disk file into a linear list of sectors.
    * @returns {number}
    */
   get sectorSizeBytes(): number {
@@ -54,6 +61,7 @@ export class Disk {
 
   /**
    * Get partition table format.
+   * Specifies partition table format on a disk.
    * @returns {PartitionTableFormat}
    */
   get partitionTableFormat(): PartitionTableFormat {
@@ -62,6 +70,7 @@ export class Disk {
 
   /**
    * Get disk partitions.
+   * Array of Partitions. Specifies information about all the partitions in this disk.
    * @returns {Array<DiskPartition>}
    */
   get diskPartitions(): Array<DiskPartition> {

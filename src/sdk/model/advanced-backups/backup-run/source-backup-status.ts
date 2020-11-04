@@ -14,6 +14,8 @@ export class SourceBackupStatus {
 
   /**
    * Get error.
+   * Specifies if an error occurred (if any) while running this task.
+   * This field is populated when the status is equal to 'FAILURE'.
    * @returns {string | null}
    */
   get error(): string | null {

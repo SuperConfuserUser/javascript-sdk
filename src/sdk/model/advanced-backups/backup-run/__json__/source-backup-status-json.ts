@@ -6,7 +6,7 @@ import { StatusSourceBackupStatus } from './status-source-backup-status';
  * Source Backup Status JSON.
  */
 export interface SourceBackupStatusJson {
-  error: string;
+  error?: string;
   is_full_backup: boolean;
   num_restarts: number;
   quiesced: boolean;

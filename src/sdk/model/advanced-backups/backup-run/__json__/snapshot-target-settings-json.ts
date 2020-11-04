@@ -6,7 +6,7 @@ import { SnapshotTargetType } from './snapshot-target-type';
  * Snapshot Target Settings JSON.
  */
 export interface SnapshotTargetSettingsJson {
-  archival_target: ArchivalExternalTargetJson;
-  replication_target: ReplicationTargetSettingsJson;
+  archival_target?: ArchivalExternalTargetJson;
+  replication_target?: ReplicationTargetSettingsJson;
   type: SnapshotTargetType;
 }

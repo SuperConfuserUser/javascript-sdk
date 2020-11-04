@@ -29,10 +29,10 @@ export class SearchVdcRecoverableFilesAndFoldersFilters {
 
   /**
    * Get search.
-   * @returns {string}
+   * @returns {string | null}
    */
-  get search(): string {
-    return this._json.search;
+  get search(): string | null {
+    return this._json.search || null;
   }
 
   /**

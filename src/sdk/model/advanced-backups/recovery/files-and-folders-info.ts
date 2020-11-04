@@ -28,6 +28,7 @@ export class FilesAndFoldersInfo {
 
   /**
    * Get is directory.
+   * Specifies if specified object is a directory or not.
    * @returns {boolean}
    */
   get isDirectory(): boolean {
@@ -36,6 +37,7 @@ export class FilesAndFoldersInfo {
 
   /**
    * Get absolute path.
+   * Specifies the absolute path of the specified file or folder.
    * @returns {string}
    */
   get absolutePath(): string {

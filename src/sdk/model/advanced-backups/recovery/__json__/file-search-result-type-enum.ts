@@ -2,7 +2,8 @@
  * File search result type enum.
  */
 export enum FileSearchResultType {
-  ANY = 'ANY',
+  DIRECTORY = 'DIRECTORY',
   FILE = 'FILE',
-  FOLDER = 'FOLDER'
+  EMAIL = 'EMAIL',
+  SYMLINK = 'SYMLINK'
 }

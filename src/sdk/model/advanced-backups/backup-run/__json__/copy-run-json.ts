@@ -8,10 +8,10 @@ import { SnapshotTargetSettingsJson } from './snapshot-target-settings-json';
  */
 export interface CopyRunJson {
   copy_snapshot_tasks: Array<CopySnapshotTaskStatusJson>;
-  error: string;
-  expiry_time: number;
+  error?: string;
+  expiry_time?: number;
   run_start_time: number;
-  stats: CopyRunStatsJson;
+  stats?: CopyRunStatsJson;
   status: StatusCopyRun;
   target: SnapshotTargetSettingsJson;
 }

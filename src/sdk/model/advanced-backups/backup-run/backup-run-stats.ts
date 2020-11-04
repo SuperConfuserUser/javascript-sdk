@@ -14,7 +14,7 @@ export class BackupRunStats {
    * @returns {number | null}
    */
   get admittedTime(): number | null {
-    return this._json.admitted_time;
+    return this._json.admitted_time || null;
   }
 
   /**
@@ -22,7 +22,7 @@ export class BackupRunStats {
    * @returns {number | null}
    */
   get endTime(): number | null {
-    return this._json.end_time;
+    return this._json.end_time || null;
   }
 
   /**

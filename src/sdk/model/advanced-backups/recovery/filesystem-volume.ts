@@ -13,6 +13,7 @@ export class FilesystemVolume {
 
   /**
    * Get is supported.
+   * If true, this is a supported filesystem volume type.
    * @returns {boolean}
    */
   get isSupported(): boolean {
@@ -21,6 +22,8 @@ export class FilesystemVolume {
 
   /**
    * Get disks.
+   * Array of Disks and Partitions. Specifies information about all the disks and partitions
+   * needed to mount this logical volume.
    * @returns {Array<Disk>}
    */
   get disks(): Array<Disk> {

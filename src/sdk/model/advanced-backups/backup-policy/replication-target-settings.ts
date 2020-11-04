@@ -17,14 +17,6 @@ export class ReplicationTargetSettings {
   }
 
   /**
-   * Get cluster name.
-   * @returns {string}
-   */
-  get clusterName(): string {
-    return this._json.cluster_name;
-  }
-
-  /**
    * Get the json representation of this class.
    * @returns {ReplicationTargetSettingsJson}
    */

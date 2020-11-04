@@ -1,4 +1,5 @@
 import { RestoreVmBackupParamsJson } from './__json__/restore-vm-backup-params-json';
+import { AlternateVappParams } from './alternate-vapp-params';
 
 /**
  * Restore VM Backup params.
@@ -25,21 +26,12 @@ export class RestoreVmBackupParams {
   }
 
   /**
-   * Get storage profile.
-   * The storage profile that the recovered objects should be imported to.
-   * @returns {string | null}
+   * Get alternate vApp.
+   * Optionally specifies an alternate vApp to recover the VM snapshot to.
+   * @returns {AlternateVappParams | null}
    */
-  get storageProfile(): string | null {
-    return this._json.storage_profile || null;
-  }
-
-  /**
-   * Get vapp uuid.
-   * The UUID of the vApp that the recovered VMs should be recovered in.
-   * @returns {string | null}
-   */
-  get vappUuid(): string | null {
-    return this._json.vapp_uuid || null;
+  get alternateVapp(): AlternateVappParams | null {
+    return this._json.alternate_vapp ? new AlternateVappParams(this._json.alternate_vapp) : null;
   }
 
   /**

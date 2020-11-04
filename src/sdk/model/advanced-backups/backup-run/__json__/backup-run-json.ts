@@ -7,14 +7,14 @@ import { BackupRunStatsJson } from './backup-run-stats-json';
  * Backup Run JSON.
  */
 export interface BackupRunJson {
-  error_message: string;
-  success_message: string;
+  error_message?: string;
+  success_message?: string;
   metadata_deleted: boolean;
   quiesced: boolean;
   run_type: RunType;
-  sla_violated: boolean;
+  sla_violated?: boolean;
   snapshots_deleted: boolean;
-  snapshots_deleted_time: number;
+  snapshots_deleted_time?: number;
   source_backup_status: Array<SourceBackupStatusJson>;
   stats: BackupRunStatsJson;
   status: StatusBackupRun;

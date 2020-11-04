@@ -12,6 +12,7 @@ export class GenerateBackupFileDownloadBundleParams {
 
   /**
    * Get task name.
+   * The name that should be associated with the task.
    * @returns {string}
    */
   get taskName(): string {
@@ -20,6 +21,7 @@ export class GenerateBackupFileDownloadBundleParams {
 
   /**
    * Get backup run uid.
+   * The UID of the backup run that is associated with files to be downloaded.
    * @returns {string}
    */
   get backupRunUid(): string {
@@ -28,6 +30,8 @@ export class GenerateBackupFileDownloadBundleParams {
 
   /**
    * Get files and folders.
+   * The set of files/folders to be included.
+   * Items should be unique in list.
    * @returns {Array<FilesAndFoldersInfo>}
    */
   get filesAndFolders(): Array<FilesAndFoldersInfo> {

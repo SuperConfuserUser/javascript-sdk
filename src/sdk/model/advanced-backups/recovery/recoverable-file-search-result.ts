@@ -11,6 +11,7 @@ export class RecoverableFileSearchResult {
 
   /**
    * Get location id.
+   * The ID of the location that the result is associated with.
    * @returns {string}
    */
   get locationId(): string {
@@ -19,6 +20,7 @@ export class RecoverableFileSearchResult {
 
   /**
    * Get company id.
+   * The ID of the company that the result is associated with.
    * @returns {string}
    */
   get companyId(): string {
@@ -27,6 +29,7 @@ export class RecoverableFileSearchResult {
 
   /**
    * Get org uuid.
+   * The UUID of the Org that the result is associated with.
    * @returns {string}
    */
   get orgUuid(): string {
@@ -35,6 +38,7 @@ export class RecoverableFileSearchResult {
 
   /**
    * Get vdc uuid.
+   * The UUID of the vDC that the result is associated with.
    * @returns {string}
    */
   get vdcUuid(): string {
@@ -43,6 +47,7 @@ export class RecoverableFileSearchResult {
 
   /**
    * Get vapp uuid.
+   * The UUID of the vApp that the result is associated with.
    * @returns {string}
    */
   get vappUuid(): string {
@@ -51,6 +56,7 @@ export class RecoverableFileSearchResult {
 
   /**
    * Get vm uuid.
+   * The UUID of the VM that the result is associated with.
    * @returns {string}
    */
   get vmUuid(): string {
@@ -59,6 +65,7 @@ export class RecoverableFileSearchResult {
 
   /**
    * Get filename.
+   * Specifies the name of the found file or folder.
    * @returns {string}
    */
   get filename(): string {
@@ -67,6 +74,7 @@ export class RecoverableFileSearchResult {
 
   /**
    * Get is folder.
+   * Specifies if the found item is a folder. If true, the found item is a folder.
    * @returns {boolean}
    */
   get isFolder(): boolean {
@@ -75,6 +83,8 @@ export class RecoverableFileSearchResult {
 
   /**
    * Get backup group uid.
+   * Specifies the UID of the backup group that is currently associated with the
+   * object that contains the backed up file or folder.
    * @returns {string}
    */
   get backupGroupUid(): string {
@@ -83,6 +93,7 @@ export class RecoverableFileSearchResult {
 
   /**
    * Get type.
+   * Specifies the type of the file document such as DIRECTORY, FILE, etc.
    * @returns {FileSearchResultType}
    */
   get type(): FileSearchResultType {
@@ -91,6 +102,7 @@ export class RecoverableFileSearchResult {
 
   /**
    * Get vm name.
+   * The name of the associated VM.
    * @returns {string}
    */
   get vmName(): string {
