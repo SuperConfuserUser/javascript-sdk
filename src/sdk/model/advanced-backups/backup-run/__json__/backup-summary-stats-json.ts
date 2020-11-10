@@ -6,6 +6,7 @@ export interface BackupSummaryStatsJson {
   num_failed_runs: number;
   num_sla_violations: number;
   num_successful_runs: number;
+  num_running_runs: number;
   average_run_time_millis: number;
   fastest_run_time_millis: number;
   slowest_run_time_millis: number;

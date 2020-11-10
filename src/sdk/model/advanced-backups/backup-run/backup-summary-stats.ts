@@ -10,7 +10,7 @@ export class BackupSummaryStats {
   }
 
   /**
-   * Get num canceled runs.
+   * Get number of canceled runs.
    * @returns {number}
    */
   get numCanceledRuns(): number {
@@ -18,7 +18,7 @@ export class BackupSummaryStats {
   }
 
   /**
-   * Get num failed runs.
+   * Get number of failed runs.
    * @returns {number}
    */
   get numFailedRuns(): number {
@@ -26,7 +26,7 @@ export class BackupSummaryStats {
   }
 
   /**
-   * Get num sla violations.
+   * Get number of sla violations.
    * @returns {number}
    */
   get numSlaViolations(): number {
@@ -34,11 +34,19 @@ export class BackupSummaryStats {
   }
 
   /**
-   * Get num successful runs.
+   * Get number of successful runs.
    * @returns {number}
    */
   get numSuccessfulRuns(): number {
     return this._json.num_successful_runs;
+  }
+
+  /**
+   * Get number of running runs.
+   * @returns {number}
+   */
+  get numRunningRuns(): number {
+    return this._json.num_running_runs;
   }
 
   /**
